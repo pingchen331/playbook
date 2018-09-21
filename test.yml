@@ -3,4 +3,4 @@
   remote_user: iot
   tasks:
   - name: put df to file
-    shell: /bin/df >1
+    shell: /bin/df >df-output
