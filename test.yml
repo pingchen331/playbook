@@ -1,0 +1,6 @@
+---
+- hosts: iot
+  remote_user: iot
+  tasks:
+  - name: put df to file
+    shell: /bin/df >1
