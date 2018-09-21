@@ -4,12 +4,13 @@
     http_port: 80
     max_clients: 200
   remote_user: iot
-  sudo: yes
   tasks:
   - name: ensure apache is at the latest version
     apt: pkg=httpd state=latest
+    sudo: yes
   - name: write the apache config file
     template: src=/srv/httpd.j2 dest=/etc/httpd.conf
+    sudo: yes
     notify:
     - restart apache
   - name: ensure apache is running
@@ -17,3 +18,4 @@
   handlers:
     - name: restart apache
       service: name=httpd state=restarted
+      sudo: yes
