@@ -4,6 +4,7 @@
     http_port: 80
     max_clients: 200
   remote_user: iot
+  host_key_checking: False
   sudo: yes
   tasks:
   - name: ensure apache is at the latest version
